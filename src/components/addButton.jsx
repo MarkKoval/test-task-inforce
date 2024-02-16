@@ -59,9 +59,8 @@ const AddProductButton = () => {
   };
 
   const handleFormSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault(); 
 
-    // Check for required fields
     let formIsValid = true;
     let errors = {};
 
@@ -90,7 +89,7 @@ const AddProductButton = () => {
       formIsValid = false;
     }
 
-    setErrors(errors); // Update the state with the errors
+    setErrors(errors);
 
     if (formIsValid) {
       // Submit the product data
@@ -103,7 +102,6 @@ const AddProductButton = () => {
       const newProductWithId = { ...product, id: currentMaxId + 1 };
       dispatch(addProduct(newProductWithId));
       handleClose();
-      // Here you would dispatch your action to add the product or perform the API call
     }
   };
 
